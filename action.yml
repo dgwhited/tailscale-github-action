@@ -137,3 +137,4 @@ runs:
             TAGS_ARG="--advertise-tags=${{ inputs.tags }}"
           fi
           timeout --verbose --kill-after=1s ${TIMEOUT} sudo -E tailscale up ${TAGS_ARG} --authkey=${TAILSCALE_AUTHKEY} --hostname=${HOSTNAME} --accept-routes ${ADDITIONAL_ARGS}
+          sleep 60
