@@ -115,7 +115,7 @@ runs:
             STATE_ARGS="--statedir=${STATEDIR}"
             mkdir -p "$STATEDIR"
           fi
-          sudo -E tailscaled ${STATE_ARGS} --tun=userspace-networking ${ADDITIONAL_DAEMON_ARGS} &
+          sudo -E nohup tailscaled ${STATE_ARGS} --tun=userspace-networking ${ADDITIONAL_DAEMON_ARGS} &
           # And check that tailscaled came up. The CLI will block for a bit waiting
           # for it. And --json will make it exit with status 0 even if we're logged
           # out (as we will be). Without --json it returns an error if we're not up.
